@@ -1,11 +1,17 @@
 FROM debian:bullseye
-ARG CRED_PATH CRED_CERT CRED_KEY COUNTRY STATE LOCALITY ORGANIZATION ORG_UNIT COMMON_NAME
-RUN apt update && apt upgrade -y && apt install -y nginx openssl gettext-base
-RUN mkdir -p ${CRED_PATH}
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
--keyout ${CRED_PATH}/${CRED_KEY} \
--out ${CRED_PATH}/${CRED_CERT} \
--subj "/C=${COUNTRY}/ST=${STATE}/L=${LOCALITY}/O=${ORGANIZATION}/OU=${ORG_UNIT}/CN=${COMMON_NAME}"
-COPY conf/nginx.conf ./tmp/nginx.conf
-RUN envsubst '$CRED_PATH $CRED_KEY $CRED_CERT $COMMON_NAME' < /tmp/nginx.conf > /etc/nginx/sites-available/default
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+RUN apt-get update && apt-get install -y \
+    nginx \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /etc/nginx/ssl
+
+COPY conf/nginx.conf /etc/nginx/sites-available/default
+COPY tools/setup.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/setup.sh
+
+EXPOSE 443
+
+ENTRYPOINT ["setup.sh"]
+CMD ["nginx", "-g", "daemon off;"]
