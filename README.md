@@ -2,7 +2,7 @@
 
 A system administration project focused on containerization using Docker and Docker Compose. This project involves setting up a multi-container infrastructure with NGINX, WordPress, and MariaDB.
 
-[![Tutorial](https://img.shields.io/badge/📚_Read_Complete-TUTORIAL-blue?style=for-the-badge)](./TUTORIAL.md)
+[![Tutorial](https://img.shields.io/badge/📚_Read_Complete-TUTORIAL-blue?style=for-the-badge)](./tutorial.md)
 
 **👆 New to this project? Click above for step-by-step instructions from VM setup to deployment!**
 
