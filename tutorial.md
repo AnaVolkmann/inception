@@ -36,10 +36,10 @@ Using VirtualBox:
 3. Type: Linux
 4. Version: Debian (64-bit)
 5. Memory: 4096 MB
-6. Hard disk: Create new VDI, Dynamically allocated, 30 GB
+6. Hard disk: Create new VDI, Dynamically allocated, 20 GB
 
 Additional configuration:
-- System > Processor: 2 CPUs
+- System > Processor: 4 CPUs
 - Storage > Controller IDE: Select the Debian ISO
 - Network > Adapter 1: Bridged Adapter
 
@@ -56,7 +56,7 @@ Boot the VM and follow the installation:
 7. Root password: Create and record a strong password
 8. Full name: Your name
 9. Username: Your 42 login
-10. User password: Create and record a strong password
+10. User password: Create and record a password
 11. Partitioning: Guided - use entire disk
 12. Partition scheme: All files in one partition
 13. Confirm partitioning: Yes
