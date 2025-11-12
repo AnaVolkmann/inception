@@ -21,7 +21,6 @@ A system administration project focused on containerization using Docker and Doc
 - [Testing](#testing)
 - [Documentation](#documentation)
 - [Troubleshooting](#troubleshooting)
-- [Author](#author)
 
 ## Introduction
 
