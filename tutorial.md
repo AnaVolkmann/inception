@@ -1,7 +1,10 @@
 # Inception - Complete Tutorial
 
-This tutorial provides a comprehensive, step-by-step guide to implementing the Inception project from initial setup to final deployment.
+[![Tutorial](https://img.shields.io/badge/📚_Read_Complete-TUTORIAL-blue?style=for-the-badge)](./tutorial.md)
 
+**👆 New to this project? Click above for complete step-by-step instructions!**
+
+</div>
 ## Table of Contents
 
 1. [Virtual Machine Setup](#1-virtual-machine-setup)
